@@ -1,28 +1,23 @@
-<!-- 标题、heading 和 field label 使用英文；正文使用中文。填写后移除提示文字。 -->
-## Pre-flight Plan
+<!-- 标题与 field labels 使用 English；owner-facing prose 按目标项目的 language rule。删除不适用的 relation 行与提示。 -->
+Closes #N
+Refs #N
 
-- Issue linkage（每个 relation 使用独立 plain-Markdown 行；不要把 closing keyword 与 parent reference 合并在同一句）:
-  - `Closes #N`
-  - `Refs #N`
-  - 或 `None — <reason>`
-- Goal: 说明具体问题，以及完成后可观察到的变化；必要时给出一个前后对比。
-- Scope / non-goals: 说明包含和排除的行为。
-- Touched files or areas: 列出计划涉及的文件或职责区域。
-- PR grouping decision: 说明这些改动为何构成一个可独立验收的单元。
-- Risks / shared-state ownership: 说明共享状态、依赖和恢复风险及其负责人。
-- Verification plan: 说明拟运行的检查及预期结果。
-- Review package: 按项目约定填写；没有该约定时省略。
+## Why
 
-## Review Highlights
+说明这个 PR 要解决的问题；若无 Issue，给出简短背景。按项目要求保留其他 relation 或 metadata。
 
-<!-- 按优先级列出真正需要人工判断的事项。每项给出具体位置、要确认的问题及其影响；没有额外判断时如实说明。 -->
-- Focus areas: `<path:line or symbol>` — 需要确认的具体行为或边界，以及判断错误的影响。
-- Key decisions: 说明选择、依据和取舍，以及哪些判断仍待确认。
-- Validation focus: 指向最有说服力的验证证据，并指出尚未覆盖的风险。
+## What changed
 
-## Outcome Summary
+说明实际 semantic delta。适合时用 Before / After / Unchanged；不需要的标签可省略。纯 refactor 先说明外部行为不变。
 
-- What changed: 说明实际行为变化，使用具体触发条件和前后结果。
-- Deviations from plan: 仅记录相对原计划的变化及原因；原计划保持不变。
-- Files map: 简述实际文件职责，细节与关键判断引用 Review Highlights。
-- Verification performed: 记录实际命令、结果及未运行的检查和原因；区分自动验证与人工验证。
+## What I should review
+
+列出 0–3 个需要 owner 判断的问题及影响；path / symbol 仅作定位证据。无待判断事项时简短说明。
+
+## Evidence
+
+列出支持上述 claim 的关键检查或 visual evidence，说明未覆盖的部分。
+
+## Risk / rollback
+
+说明影响范围、主要 failure mode、可逆性及回退方式。项目要求的 implementation record 可放在上述 review layer 之后。
